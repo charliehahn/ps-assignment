@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  sample-data:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      # Deprecated but works for shelling in?
+      PGPASSWORD: postgres
+    restart: always
+    volumes:
+      - ./data/:/docker-entrypoint-initdb.d/
+    ports:
+      - 5432:5432
+
+volumes:
+  data:
