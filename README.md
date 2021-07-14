@@ -1,6 +1,31 @@
 # Charlie Hahn's Postscript Take Home Assignment
 
-This is the data exploration and analysis I've put together for the senior data analyst role
+This is the data exploration and analysis I've put together for the senior analyst role.
+
+**List of Technologies Used:**
+1. sqlpad gui (for data wrangling/analysis)
+2. tableau (for data viz)
+
+**Tableau Dashboard:**
+- https://public.tableau.com/app/profile/charlie3118/viz/ps_dashboard/postscript_dash
+
+**Canva Presentation:**
+- https://www.canva.com/design/DAEkLLiKo0I/T1L_iARCLpWuIZg2W-1JoA/view?utm_content=DA[…]tm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+**Roughly how long the project took**
+- ERD Understanding + Creation: ~15 mins
+- Research Postscript Business: ~1 hour
+- EDA & Modeling: ~2 + hours
+- Tableau: ~1+ hour
+- Thinking in my sleep: ?
+- Presentation: ~30 mins
+- Video: ~10 mins
+- **Total:** 4+ hours (I went over time! This project was just really fun to work on!)
+
+**How to orchestrate delivery to production?**
+- dbt to refine raw data from snowflake with staging, intermediate, and marts data models + schema and data tests
+- Airflow to test and push refined data back into snowflake
+- Snowflake to Looker integration to provide self-service analytics for all
 
 <br>
 
