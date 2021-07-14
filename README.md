@@ -1021,32 +1021,6 @@ with monthly_shop_orders as (
 
 )
 
-, monthly_shop_stats as (
-
-  select
-    coalesce(monthly_shop_orders.order_month
-                , monthly_shop_messages.message_sent_month)     as transaction_month
-
-    , coalesce(monthly_shop_orders.shop_id
-                , monthly_shop_messages.shop_id)                as shop_id
-
-    , coalesce(monthly_shop_orders.shop_name
-                , monthly_shop_messages.shop_name)              as shop_name
-
-    , total_cost
-    , sales_total
-    , order_count
-    , message_count
-  from
-    monthly_shop_orders
-  full outer join monthly_shop_messages
-    on monthly_shop_orders.order_month = monthly_shop_messages.message_sent_month
-    and monthly_shop_orders.shop_id = monthly_shop_messages.shop_id
-  order by
-    transaction_month
-
-)
-
 , monthly_shop_messages as (
 
   select
@@ -1065,6 +1039,31 @@ with monthly_shop_orders as (
     1
     , 2
     , 3
+
+)
+
+, monthly_shop_stats as (
+
+  select
+    coalesce(monthly_shop_orders.order_month
+                , monthly_shop_messages.message_sent_month)     as transaction_month
+
+    , coalesce(monthly_shop_orders.shop_id
+                , monthly_shop_messages.shop_id)                as shop_id
+
+    , coalesce(monthly_shop_orders.shop_name
+                , monthly_shop_messages.shop_name)              as shop_name
+
+    , sales_total
+    , order_count
+    , message_count
+  from
+    monthly_shop_orders
+  full outer join monthly_shop_messages
+    on monthly_shop_orders.order_month = monthly_shop_messages.message_sent_month
+    and monthly_shop_orders.shop_id = monthly_shop_messages.shop_id
+  order by
+    transaction_month
 
 )
 
@@ -1154,7 +1153,6 @@ with monthly_shop_orders as (
   select
     stg_shops.shop_id
     , stg_shops.shop_name
-    , sum(total_cost)                                           as total_cost
     , count(case when includes_gif then 1 end)                  as mms_message_count
     , count(case when not includes_gif then 1 end)              as sms_message_count
     , count(*)                                                  as messages_sent_count
