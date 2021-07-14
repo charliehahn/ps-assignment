@@ -12,6 +12,9 @@ This is the data exploration and analysis I've put together for the senior analy
 **Canva Presentation:**
 - https://www.canva.com/design/DAEkLLiKo0I/T1L_iARCLpWuIZg2W-1JoA/view?utm_content=DA[…]tm_campaign=designshare&utm_medium=link&utm_source=sharebutton
 
+**Video Presentation:**
+- https://www.loom.com/share/af4b570bdf5e41ac9a6320b96ae7ae60
+
 **Roughly how long the project took**
 - ERD Understanding + Creation: ~15 mins
 - Research Postscript Business: ~1 hour
