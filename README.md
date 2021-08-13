@@ -1,6 +1,6 @@
-# Charlie Hahn's Postscript Take Home Assignment
+# Charlie Hahn's SQL SMS Marketing Analysis
 
-This is the data exploration and analysis I've put together for the senior analyst role.
+Data exploration and analysis for SMS Marketing project.
 
 **List of Technologies Used:**
 1. sqlpad gui (for data wrangling/analysis)
